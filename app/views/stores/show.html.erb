@@ -16,6 +16,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<h4><strong>서점 정보</strong></h4>
 			<% if @store.address.present? %>
 				<p><strong>주소</strong>: <%= @store.address %>
 				<a href="#map_move"><button type="button" class="btn btn-default btn-sm">지도보기</button></a></p>
@@ -58,7 +59,7 @@
 	<div class="row">
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
 			<% if @store.introduction.present? %>
-				<h4>간단한 소개</h4>
+				<h4><strong>간단한 소개</strong></h4>
 					<p><%= @store.introduction %></p>
 			<% end %>
 		</div>
@@ -69,7 +70,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
-			<h4 id="map_move">지도보기</h4>
+			<h4 id="map_move"><strong>지도보기</strong></h4>
 			<div id="map" style="width:100%;height:250px;">
 			</div>
 		<script>
@@ -103,6 +104,7 @@ marker.setMap(map);
 <div class="container">
 	<div class="row">
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<h4><strong>리뷰</strong></h4>
 			<div class="fb-comments" data-href="http://protected-oasis-9437.herokuapp.com/" data-width="100%" data-numposts="5"></div>
 		</div>
 	</div>
