@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Anotherbooks</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=c981ec9d04d0139cbb3fd3f9da722a8f"></script>
+</head>
+<body>
+  	<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+  		var js, fjs = d.getElementsByTagName(s)[0];
+  		if (d.getElementById(id)) return;
+  		js = d.createElement(s); js.id = id;
+  		js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId=190144500999654";
+  		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
+<%= yield %>
+
+<footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Anotehr Books</h3>
+
+				<p class="footer-links">
+					내가 좋아하는 것을 다른 사람들과 함께 나누었으면 하는 바램으로 만든 서비스 입니다.
+				</p>
+
+				<p class="footer-company-name">Another Books &copy; 2015</p>
+
+				<div class="fb-like" data-href="http://protected-oasis-9437.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+
+				<div class="twitter-button">
+    				<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+<!--
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+-->
+			</div>
+
+			<div class="footer-right">
+
+				<p>Contact Us</p>
+
+				<form action="#" method="post">
+
+					<input type="text" name="email" placeholder="연락받으실 이메일주소를 입력해주세요." />
+					<textarea name="message" placeholder="내용을 입력해 주세요."></textarea>
+					<button>보내기</button>
+
+				</form>
+
+			</div>
+
+		</footer>
+
+</body>
+</html>

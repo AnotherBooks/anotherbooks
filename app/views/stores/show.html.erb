@@ -1,0 +1,109 @@
+<div class="jumbotron">
+	<div class="background" style="background-image:url(http://i.imgur.com/yTsYu09.png)">
+    </div>
+    <a class="nav-logo" href="/"><img src="https://staticassets-a.styleshare.kr/_static/shop/data/skin/default/images/styleshare_logo.png"></a>
+    <div class="container">
+    	<h1 id="store_name"><%= @store.name %></h1>
+    	<div class="fb-like" data-href="http://protected-oasis-9437.herokuapp.com/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+    	<div class="twitter-button">
+    		<a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+ 	</div>
+</div> 
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<% if @store.address.present? %>
+				<p><strong>주소</strong>: <%= @store.address %>
+				<a href="#map_move"><button type="button" class="btn btn-default btn-sm">지도보기</button></a></p>
+			<% end %>
+			<% if @store.tel.present? %>
+				<p><strong>전화번호</strong>: <%= @store.tel %></p>
+			<% end %>
+			<% if @store.open_day.present? %>
+				<p><strong>이용시간</strong></p> 
+				<p>  평일: <%= @store.open_day %></p>
+			<% end %>
+			<% if @store.open_holiday.present? %> 
+				<p>  주말: <%= @store.open_holiday %></p>
+			<% end %>
+			<% if @store.website_url.present? %>
+				<p><strong>홈페이지</strong>: <a href="<%= @store.website_url %>" target="_blank"><%= @store.website_url %></a></p>
+			<% end %>
+			<div class="store-sns">
+				<p><strong>공식 SNS</strong></p>
+				<% if @store.instagram_id.present? %>
+					<a href="https://www.instagram.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+				<% end %>
+				<% if @store.facebook_id.present? %>
+					<a href="https://www.facebook.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+				<% end %>
+				<% if @store.twitter_id.present? %>
+					<a href="https://www.twitter.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+				<% end %>
+				<% if @store.blog_url.present? %>
+					<a href="<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+				<% end %>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<% if @store.introduction.present? %>
+				<h4>간단한 소개</h4>
+					<p><%= @store.introduction %></p>
+			<% end %>
+		</div>
+	</div>
+</div>	
+
+<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<h4 id="map_move">지도보기</h4>
+			<div id="map" style="width:100%;height:250px;">
+			</div>
+		<script>
+			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>), // 지도의 중심좌표
+        level: 3 // 지도의 확대 레벨
+    };
+
+var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+// 마커가 표시될 위치입니다 
+var markerPosition  = new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>); 
+
+// 마커를 생성합니다
+var marker = new daum.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+// marker.setMap(null);
+		</script>
+		</div>
+	</div>
+</div>	
+
+<hr>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<div class="fb-comments" data-href="http://protected-oasis-9437.herokuapp.com/" data-width="100%" data-numposts="5"></div>
+		</div>
+	</div>
+</div>		

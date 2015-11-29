@@ -1,0 +1,2 @@
+module StoresControllerHelper
+end
