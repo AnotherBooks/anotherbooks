@@ -7,9 +7,6 @@ class CreateStores < ActiveRecord::Migration
 		t.float :longitude
 		t.text :introduction
 		t.string :tel
-		t.string :instagram_id
-		t.string :twitter_id
-		t.string :facebook_id
 		t.string :blog_url
 		t.string :website_url
 		t.string :open_day

@@ -18,24 +18,24 @@
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
 			<h4><strong>서점 정보</strong></h4>
 			<% if @store.address.present? %>
-				<p><strong>주소</strong>: <%= @store.address %>
+				<p><strong>- 주소</strong>: <%= @store.address %>
 				<a href="#map_move"><button type="button" class="btn btn-default btn-sm">지도보기</button></a></p>
 			<% end %>
 			<% if @store.tel.present? %>
-				<p><strong>전화번호</strong>: <%= @store.tel %></p>
+				<p><strong>- 전화번호</strong>: <%= @store.tel %></p>
 			<% end %>
 			<% if @store.open_day.present? %>
-				<p><strong>이용시간</strong></p> 
+				<p><strong>- 이용시간</strong></p> 
 				<p>  평일: <%= @store.open_day %></p>
 			<% end %>
 			<% if @store.open_holiday.present? %> 
 				<p>  주말: <%= @store.open_holiday %></p>
 			<% end %>
 			<% if @store.website_url.present? %>
-				<p><strong>홈페이지</strong>: <a href="<%= @store.website_url %>" target="_blank"><%= @store.website_url %></a></p>
+				<p><strong>- 홈페이지</strong>: <a href="<%= @store.website_url %>" target="_blank"><%= @store.website_url %></a></p>
 			<% end %>
 			<div class="store-sns">
-				<p><strong>공식 SNS</strong></p>
+				<p><strong>- 공식 SNS</strong></p>
 				<% if @store.instagram_id.present? %>
 					<a href="https://www.instagram.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
 				<% end %>
