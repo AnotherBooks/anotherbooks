@@ -28,7 +28,11 @@
 <% @stores.each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12">	
 			<div class="thumbnail">
-				<a href="/stores/<%= store.id %>"><img src="http://goo.gl/vw43v1"></a>
+        <% if store.cover_image.present? %>
+				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
+        <% else %>
+          <a href="/stores/<%= store.id %>"><img src="http://goo.gl/vw43v1"></a>
+        <% end %>
 			</div>			
 		<h4><a href="/stores/<%= store.id %>"><%= store.name %></a></h4>
   		<P><%= store.address %></P>

@@ -1,6 +1,11 @@
 <div class="jumbotron">
-	<div class="background" style="background-image:url(http://i.imgur.com/yTsYu09.png)">
+	<% if @store.background_image.present? %>
+	<div class="background" style="background-image:url(<%= @store.background_image %>)">
     </div>
+    <% else %> 
+    <div class="background" style="background-image:url(http://i.imgur.com/yTsYu09.png)">
+    </div>
+    <% end %>
     <a class="nav-logo" href="/"><img src="https://staticassets-a.styleshare.kr/_static/shop/data/skin/default/images/styleshare_logo.png"></a>
     <div class="container">
     	<h1 id="store_name"><%= @store.name %></h1>
