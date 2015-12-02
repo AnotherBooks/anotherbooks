@@ -12,7 +12,7 @@ ActiveAdmin.register Store do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-permit_params :name, :address, :latitude, :longitude, :introduction, :tel, :blog_url, :website_url, :open_day, :open_holiday
+permit_params :name, :address, :latitude, :longitude, :introduction, :tel, :blog_url, :website_url, :open_day, :open_holiday, :background_image, :cover_image, :url_name
 
 
 end
