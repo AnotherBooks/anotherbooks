@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151202093957) do
+ActiveRecord::Schema.define(version: 20151203123832) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -53,9 +53,9 @@ ActiveRecord::Schema.define(version: 20151202093957) do
     t.float    "longitude"
     t.text     "introduction"
     t.string   "tel"
-    t.string   "instagram_id"
-    t.string   "twitter_id"
-    t.string   "facebook_id"
+    t.string   "instagram_uid"
+    t.string   "twitter_uid"
+    t.string   "facebook_uid"
     t.string   "blog_url"
     t.string   "website_url"
     t.datetime "created_at",       null: false
