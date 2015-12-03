@@ -42,16 +42,16 @@
 			<div class="store-sns">
 				<p><strong>- 공식 SNS</strong></p>
 				<% if @store.instagram_id.present? %>
-					<a href="https://www.instagram.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+					<a href="https://www.instagram.com/<%= @store.instagram_id %>" target="_blank"><img src="http://i.imgur.com/6O2efKg.png"></a>
 				<% end %>
 				<% if @store.facebook_id.present? %>
-					<a href="https://www.facebook.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+					<a href="https://www.facebook.com/<%= @store.instagram_id %> " target="_blank"><img src="http://i.imgur.com/GcXjgPG.png"></a>
 				<% end %>
 				<% if @store.twitter_id.present? %>
-					<a href="https://www.twitter.com/<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+					<a href="https://www.twitter.com/<%= @store.instagram_id %>" target="_blank"><img src="http://i.imgur.com/jzaWBYr.png"></a>
 				<% end %>
 				<% if @store.blog_url.present? %>
-					<a href="<%= @store.instagram_id %>"><img src="http://www.swe.gtorg.gatech.edu/wp-content/uploads/2015/02/Instagram.png"></a>
+					<a href="<%= @store.blog_url %>" target="_blank"><img src="http://i.imgur.com/CB98VTh.png"></a>
 				<% end %>
 			</div>	
 		</div>
@@ -80,26 +80,26 @@
 			</div>
 		<script>
 			var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = { 
-        center: new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
-    };
+    			mapOption = { 
+        		center: new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>), // 지도의 중심좌표
+        		level: 3 // 지도의 확대 레벨
+    			};
 
-var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+			var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-// 마커가 표시될 위치입니다 
-var markerPosition  = new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>); 
+			// 마커가 표시될 위치입니다 
+			var markerPosition  = new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>); 
 
-// 마커를 생성합니다
-var marker = new daum.maps.Marker({
-    position: markerPosition
-});
+			// 마커를 생성합니다
+			var marker = new daum.maps.Marker({
+    			position: markerPosition
+				});
 
-// 마커가 지도 위에 표시되도록 설정합니다
-marker.setMap(map);
+			// 마커가 지도 위에 표시되도록 설정합니다
+			marker.setMap(map);
 
-// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-// marker.setMap(null);
+			// 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+			// marker.setMap(null);
 		</script>
 		</div>
 	</div>

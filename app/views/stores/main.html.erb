@@ -12,19 +12,23 @@
     		<span class="caret"></span>
   			</button>
   			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    			<li><a href="#">서울(강북)</a></li>
-    			<li><a href="#">서울(강남)</a></li>
-    			<li><a href="#">경기도</a></li>
+    			<li><a href="#">서울(홍대/신촌)</a></li>
+    			<li><a href="#">서울(한남/북촌)</a></li>
+          <li><a href="#">서울(기타)</a></li>
+    			<li><a href="#">경기</a></li>
     			<li><a href="#">충청</a></li>
+          <li><a href="#">전라/광주</a></li>
+          <li><a href="#">경북/대구</a></li>
+          <li><a href="#">경남/부산</a></li>
+          <li><a href="#">제주</a></li>
   			</ul>
 		</div>
   -->
  	</div>
 </div> 
-
-
 <div class="container">
 	<div class="row">
+    <h4 style="margin-left: 20px;">새롭게 추가된 서점</h4>
 <% @stores.each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12">	
 			<div class="thumbnail">
@@ -42,5 +46,24 @@
 	</div>
 </div>	
 
-
-
+<!--
+<hr>
+<h3 style="text-align: center;">지역별로 찾아보세요.</h4>
+  <div class="dropdown select-local" style="margin-left: 44%;">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        지역선택
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#">서울(홍대/신촌)</a></li>
+          <li><a href="#">서울(한남/북촌)</a></li>
+          <li><a href="#">서울(기타)</a></li>
+          <li><a href="#">경기</a></li>
+          <li><a href="#">충청</a></li>
+          <li><a href="#">전라/광주</a></li>
+          <li><a href="#">경북/대구</a></li>
+          <li><a href="#">경남/부산</a></li>
+          <li><a href="#">제주</a></li>
+        </ul>
+  </div>
+-->
