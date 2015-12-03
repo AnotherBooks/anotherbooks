@@ -41,13 +41,13 @@
 			<% end %>
 			<div class="store-sns">
 				<p><strong>- 공식 SNS</strong></p>
-				<% if @store.instagram_id.present? %>
+				<% if @store.instagram_uid.present? %>
 					<a href="https://www.instagram.com/<%= @store.instagram_id %>" target="_blank"><img src="http://i.imgur.com/6O2efKg.png"></a>
 				<% end %>
-				<% if @store.facebook_id.present? %>
+				<% if @store.facebook_uid.present? %>
 					<a href="https://www.facebook.com/<%= @store.instagram_id %> " target="_blank"><img src="http://i.imgur.com/GcXjgPG.png"></a>
 				<% end %>
-				<% if @store.twitter_id.present? %>
+				<% if @store.twitter_uid.present? %>
 					<a href="https://www.twitter.com/<%= @store.instagram_id %>" target="_blank"><img src="http://i.imgur.com/jzaWBYr.png"></a>
 				<% end %>
 				<% if @store.blog_url.present? %>
