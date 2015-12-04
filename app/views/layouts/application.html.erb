@@ -6,7 +6,9 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-  <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=c981ec9d04d0139cbb3fd3f9da722a8f"></script>
+  <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=c981ec9d04d0139cbb3fd3f9da722a8f">
+
+  </script>
 </head>
 <body>
   	<div id="fb-root"></div>
@@ -57,8 +59,17 @@
 
 					<input type="text" name="email" placeholder="연락받으실 이메일주소를 입력해주세요." />
 					<textarea name="message" placeholder="내용을 입력해 주세요."></textarea>
-					<button>보내기</button>
+					
+						
 
+					
+					<button onclick="button1_click();">보내기</button>
+					<script type="text/javascript">
+						function button1_click() {
+							alert("전송되었습니다.");
+							}
+					</script>
+				
 				</form>
 
 			</div>
