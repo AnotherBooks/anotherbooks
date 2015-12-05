@@ -12,11 +12,12 @@
 <div id="map" style="width:100%;height:250px;"></div>
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+<% @stores.limit(1).each do |store| %>
     mapOption = { 
         center: new daum.maps.LatLng(37.5511905, 126.9202689), // 지도의 중심좌표
         level: 7 // 지도의 확대 레벨
     };
-
+<% end %>
 var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
  
 // 마커를 표시할 위치와 title 객체 배열입니다 
