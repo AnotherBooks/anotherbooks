@@ -48,7 +48,7 @@ for (var i = 0; i < positions.length; i ++) {
     });
 }
 
-var iwContent = '<div style="padding:5px;"><%= store.name %> <br><a href="/stores/<%= store.id %>" style="color:blue">상세보기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+var iwContent = '<div style="padding:5px;"><%= store.name %> <a href="/stores/<%= store.id %>" style="color:blue">상세보기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwPosition = new daum.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>); //인포윈도우 표시 위치입니다
 
 // 인포윈도우를 생성합니다
@@ -64,8 +64,9 @@ infowindow.open(map, marker);
 
 
 
-<div class="container">
+<div class="container" style="margin-top: 50px;">
 	<div class="row">
+    <h4 style="margin-left: 20px;">총 <%= @stores.count %>개의 동네서점</h4>
 <% @stores.each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12">	
 			<div class="thumbnail">
