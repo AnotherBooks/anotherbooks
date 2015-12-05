@@ -14,7 +14,7 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
 <% @stores.limit(1).each do |store| %>
     mapOption = { 
-        center: new daum.maps.LatLng(37.5511905, 126.9202689), // 지도의 중심좌표
+        center: new daum.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>), // 지도의 중심좌표
         level: 7 // 지도의 확대 레벨
     };
 <% end %>
