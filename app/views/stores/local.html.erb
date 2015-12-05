@@ -13,7 +13,7 @@
 <script>
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
     mapOption = { 
-        center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+        center: new daum.maps.LatLng(37.5511905, 126.9202689), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
     };
 
@@ -27,7 +27,7 @@ var positions = [
         latlng: new daum.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>)
     }
 ];
-<% end %> 
+
 // 마커 이미지의 이미지 주소입니다
 var imageSrc = "http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
     
@@ -47,6 +47,7 @@ for (var i = 0; i < positions.length; i ++) {
         image : markerImage // 마커 이미지 
     });
 }
+<% end %>
 </script>
 
 
