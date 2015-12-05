@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'stores/:id' => 'stores#show'
   root 'stores#main'
-  get 'stores/local/:district_num' => 'stores#district'
+  get 'stores/local/:district_num' => 'stores#local'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

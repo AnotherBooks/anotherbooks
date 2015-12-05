@@ -7,7 +7,7 @@ class StoresController < ApplicationController
   	@stores = Store.order(id: :desc).limit(15).all
   end
 
-  def district
-  	@local = Store.find(params[:district_num])
+  def local
+  	@stores = Store.where(district_num: params[:district_num])
   end
 end

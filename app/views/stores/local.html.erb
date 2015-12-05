@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-<% @local.each do |store| %>
+<% @stores.each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12">	
 			<div class="thumbnail">
         <% if store.cover_image.present? %>
@@ -15,4 +15,4 @@
 		</div>
 	<% end %>	
 	</div>
-</div>
+</div>	
