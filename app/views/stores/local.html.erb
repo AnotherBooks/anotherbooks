@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+<% @local.each do |store| %>
+		<div class="col-md-4 col-sm-6 col-xs-12">	
+			<div class="thumbnail">
+        <% if store.cover_image.present? %>
+				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
+        <% else %>
+          <a href="/stores/<%= store.id %>"><img src="http://goo.gl/vw43v1"></a>
+        <% end %>
+			</div>			
+		<h4><a href="/stores/<%= store.id %>"><%= store.name %></a></h4>
+  		<P><%= store.address %></P>
+  		<p><%= truncate(store.introduction, length: 70, omission: '...(more)') %></p>
+		</div>
+	<% end %>	
+	</div>
+</div>
