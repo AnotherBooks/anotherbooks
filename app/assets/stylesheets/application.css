@@ -57,6 +57,12 @@
   text-align: center;
 }
 
+.nav_logo {
+	height: 30px;
+	margin-top: -5px;
+}
+
+
 #store_name {
   color: #fff;
   font-size: 30px;  
