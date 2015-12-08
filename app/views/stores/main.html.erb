@@ -1,5 +1,5 @@
 <div class="jumbotron">
-	<div class="background" style="background-image:url(http://i.imgur.com/zJVpw2a.jpg)">
+	<div class="background" style="background-image:url(http://i.imgur.com/EtwCSYH.jpg)">
     </div>
     <a class="nav-logo" href="/"><img src="https://staticassets-a.styleshare.kr/_static/shop/data/skin/default/images/styleshare_logo.png"></a>
     <div class="container">
@@ -15,22 +15,22 @@
     			<li><a href="/stores/local/1">서울(홍대/신촌)</a></li>
     			<li><a href="/stores/local/2">서울(한남/북촌)</a></li>
           <li><a href="/stores/local/3">서울(기타)</a></li>
-    			<li><a href="/stores/local/4">경기</a></li>
-    			<li><a href="/stores/local/5">충청</a></li>
+    			<li><a href="/stores/local/4">경기/인천</a></li>
+    			<li><a href="/stores/local/5">충청/대전</a></li>
           <li><a href="/stores/local/6">전라/광주</a></li>
           <li><a href="/stores/local/7">경북/대구</a></li>
           <li><a href="/stores/local/8">경남/부산</a></li>
           <li><a href="/stores/local/9">제주</a></li>
   			</ul>
-		</div>
-  
+		</div>  
  	</div>
 </div> 
+
 <div class="container">
 	<div class="row">
     <h4 style="margin-left: 20px;">새롭게 추가된 서점</h4>
 <% @stores.each do |store| %>
-		<div class="col-md-4 col-sm-6 col-xs-12">	
+		<div class="col-md-4 col-sm-6 col-xs-12 store">	
 			<div class="thumbnail">
         <% if store.cover_image.present? %>
 				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
@@ -58,8 +58,8 @@
           <li><a href="/stores/local/1">서울(홍대/신촌)</a></li>
           <li><a href="/stores/local/2">서울(한남/북촌)</a></li>
           <li><a href="/stores/local/3">서울(기타)</a></li>
-          <li><a href="/stores/local/4">경기</a></li>
-          <li><a href="/stores/local/5">충청</a></li>
+          <li><a href="/stores/local/4">경기/인천</a></li>
+          <li><a href="/stores/local/5">충청/대전</a></li>
           <li><a href="/stores/local/6">전라/광주</a></li>
           <li><a href="/stores/local/7">경북/대구</a></li>
           <li><a href="/stores/local/8">경남/부산</a></li>
