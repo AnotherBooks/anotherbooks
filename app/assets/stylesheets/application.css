@@ -89,9 +89,11 @@
 	height: 100%;
 }
 
-.select-local {
-	margin-top: 20px;
-	margin-left: 45%;
+.dropdown-center {
+	left: 50%;
+    right: auto;
+    text-align: center;
+    transform: translate(-50%, 0);
 }
 
 .store {
@@ -106,12 +108,10 @@
 
 .container > .fb-like {
 	margin-top: 5px;
-	margin-left: 44%;
 }
 
 .container > .twitter-button {
 	margin-top: 10px;
-	margin-left: 44%;
 }
 
 .footer-left > .fb-like {

@@ -15,7 +15,7 @@
   <% @stores.limit(1).each do |store| %>
     mapOption = { 
         center: new daum.maps.LatLng(<%= store.latitude %>, <%= store.longitude %>), // 지도의 중심좌표
-        level: 7 // 지도의 확대 레벨
+        level: 8 // 지도의 확대 레벨
     };
   <% end %>
   var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -69,7 +69,7 @@ infowindow.open(map, marker);
 	<div class="row">
     <h4 style="margin-left: 20px;">총 <%= @stores.count %>개의 동네서점</h4>
     <% @stores.each do |store| %>
-		<div class="col-md-4 col-sm-6 col-xs-12">	
+		<div class="col-md-4 col-sm-6 col-xs-12 store">	
 			<div class="thumbnail">
         <% if store.cover_image.present? %>
 				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
@@ -88,17 +88,17 @@ infowindow.open(map, marker);
 <hr>
 <br/>
 <h3 style="text-align: center;">다른 지역의 서점 보기</h3>
-  <div class="dropdown select-local">
+  <div class="dropdown text-center">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         지역선택
         <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <ul class="dropdown-menu dropdown-center" aria-labelledby="dropdownMenu1">
           <li><a href="/stores/local/1">서울(홍대/신촌)</a></li>
           <li><a href="/stores/local/2">서울(한남/북촌)</a></li>
           <li><a href="/stores/local/3">서울(기타)</a></li>
-          <li><a href="/stores/local/4">경기</a></li>
-          <li><a href="/stores/local/5">충청</a></li>
+          <li><a href="/stores/local/4">경기/인천</a></li>
+          <li><a href="/stores/local/5">충청/대</a></li>
           <li><a href="/stores/local/6">전라/광주</a></li>
           <li><a href="/stores/local/7">경북/대구</a></li>
           <li><a href="/stores/local/8">경남/부산</a></li>
