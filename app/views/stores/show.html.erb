@@ -1,3 +1,7 @@
+<% content_for(:title, @store.name) %>
+<% content_for(:description, @store.introduction) %>
+<% content_for(:ogimg, @store.cover_image) %>
+
 <div class="jumbotron">
 	<% if @store.background_image.present? %>
 	<div class="background" style="background-image:url(<%= @store.background_image %>)">
