@@ -4,7 +4,7 @@ class StoresController < ApplicationController
   end
 
   def main
-  	@stores = Store.order(updated_at: :desc).limit(15).all
+  	@stores = Store.order(id: :desc).limit(15).all
   end
 
   def local
