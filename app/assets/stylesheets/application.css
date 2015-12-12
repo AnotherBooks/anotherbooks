@@ -106,6 +106,10 @@
 	margin-top: 10px;
 }
 
+#footer-logo {
+	height: 60px;
+}
+
 .footer-left > .fb-like {
 	margin-top: 15px;
 }
