@@ -9,7 +9,7 @@
 </nav>
 
 
-<div id="map" style="width:100%;height:250px;"></div>
+<div id="map" style="width:100%;height:250px;margin-top:-20px;"></div>
 <script>
   var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
   <% @stores.limit(1).each do |store| %>
@@ -74,7 +74,7 @@ infowindow.open(map, marker);
         <% if store.cover_image.present? %>
 				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
         <% else %>
-          <a href="/stores/<%= store.id %>"><img src="http://goo.gl/vw43v1"></a>
+          <a href="/stores/<%= store.id %>"><img src="http://i.imgur.com/kCJFW2c.jpg"></a>
         <% end %>
 			</div>			
 		<h4><a href="/stores/<%= store.id %>"><%= store.name %></a></h4>
