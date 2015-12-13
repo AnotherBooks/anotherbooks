@@ -21,6 +21,8 @@
   
   <meta property="og:image"  content="<%= yield(:ogimg).presence || "http://i.imgur.com/ezxAvIg.jpg"%>" /> 
 
+  <meta property="og:description"  content="<%= yield(:description).presence || '전국 각지에 있는 동네서점, 독립서점을 한 곳에서 모아보세요. 이 곳에서만 느낄 수 있는 분위기, 독특한 책들이 동네서점에 있습니다.'%>" /> 
+
 
   <meta name="naver-site-verification" content="e1be0a3c1a297765c0d96562630f65346e3b7b01"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
