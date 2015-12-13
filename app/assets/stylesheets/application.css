@@ -89,7 +89,7 @@
 }
 
 .store {
-	height: 320px;
+	height: 330px;
 }
 
 .store-sns img {
@@ -97,6 +97,8 @@
 	width: 40px;
 	height: 40px;
 }
+
+
 
 .container > .fb-like {
 	margin-top: 5px;
