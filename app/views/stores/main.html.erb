@@ -29,7 +29,7 @@
 <div class="container">
 	<div class="row">
     <h4 style="margin-left: 20px;">새롭게 추가된 동네서점 <span class="label label-info">New</span></h4>
-<% @stores.each do |store| %>
+<% @stores.limit(15).each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12 store">	
 			<div class="thumbnail">
         <% if store.cover_image.present? %>
