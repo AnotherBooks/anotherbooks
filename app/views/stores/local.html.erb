@@ -67,7 +67,7 @@ infowindow.open(map, marker);
 
 <div class="container" style="margin-top: 50px;">
 	<div class="row">
-    <h4 style="margin-left: 20px;">총 <%= @stores.count %>개의 동네서점</h4>
+    <h4 style="margin-left: 20px;">이 지역의 동네서점(총 <%= @stores.count %>개)</h4>
     <% @stores.each do |store| %>
 		<div class="col-md-4 col-sm-6 col-xs-12 store">	
 			<div class="thumbnail">
