@@ -29,8 +29,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  
   <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=c981ec9d04d0139cbb3fd3f9da722a8f">
   </script>
+
+
+
+<link rel="stylesheet" href="/assets/flexslider.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="/assets/jquery.flexslider.js"></script>
+
+
+<script type="text/javascript" charset="utf-8">
+  $(window).load(function() {
+    $('.flexslider').flexslider({
+    	animation: "slide",
+        controlNav: "thumbnails",
+        useCSS: true,
+        smoothHeight: false
+    });
+  });
+</script>
 
 
 </head>
@@ -42,7 +61,8 @@
   					js = d.createElement(s); js.id = id;
   					js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.5&appId=204781903190665";
   					fjs.parentNode.insertBefore(js, fjs);
-					}(document, 'script', 'facebook-jssdk'));</script>
+					}(document, 'script', 'facebook-jssdk'));
+		</script>
 
 
 
