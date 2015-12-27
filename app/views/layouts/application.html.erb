@@ -43,10 +43,12 @@
 <script type="text/javascript" charset="utf-8">
   $(window).load(function() {
     $('.flexslider').flexslider({
-    	animation: "slide",
-        controlNav: "thumbnails",
-        useCSS: true,
-        smoothHeight: false
+    animation: "slide",
+    animationLoop: false,
+    itemWidth: 180,
+    itemMargin: 5,
+    minItems: 2,
+    maxItems: 4
     });
   });
 </script>
