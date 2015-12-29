@@ -3,3 +3,4 @@ class AddLocalToStores < ActiveRecord::Migration
     add_column :stores, :district_num, :integer
   end
 end
+
