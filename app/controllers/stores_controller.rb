@@ -10,31 +10,6 @@ class StoresController < ApplicationController
 				:thumbnail => i.xpath('thumbnail').inner_text
 			}
 			end
-    require 'geo-distance'
-
-it "should work" do
-  lon1 = -104.88544
-  lat1 = 39.06546
-
-  lon2 = -104.80
-  lat2 = lat1
-
-  dist = GeoDistance.distance( lat1, lon1, lat2, lon2 ) # in radians  
-
-  dist = GeoDistance::Haversine.geo_distance( lat1, lon1, lat2, lon2 ).to_meters
-
-  # Change to (lng, lat) mode
-  GeoPoint.coord_mode = :lng_lat
-
-  p1, p2 = [[lon1, lat1].geo_point, [lon2, lat2].geo_point]
-
-  dist = GeoDistance::Haversine.geo_distance( lon1, lat1, lon2, lat2)
-  dist = GeoDistance::Haversine.geo_distance( p1, p2).to_miles
-
-  @distance = dist.meters
-end    
-
-
   end
 
   def main

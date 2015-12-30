@@ -66,6 +66,19 @@
 	</div>
 </div>
 
+<br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6" style="margin: 0 auto; float: none;">
+			<% if @store.introduction.present? %>
+				<h4><strong>간단한 소개</strong></h4>
+					<pre><%= @store.introduction %></pre>
+			<% end %>
+		</div>
+	</div>
+</div>	
+
+
 <% if @store.search_img.present? %>
 <div class="container">
 	<div class="row">
@@ -85,7 +98,7 @@
 </div>
 <% end %>
 
-<p><%= @distance %></p>
+
 
 <hr>
 <div class="container">
@@ -120,6 +133,8 @@
 		</div>
 	</div>
 </div>	
+
+<!--
 <br/>
 <div class="container">
 	<div class="row">
@@ -150,7 +165,7 @@
 		</div>
 	</div>
 </div>
-
+-->
 
 
 <hr>
