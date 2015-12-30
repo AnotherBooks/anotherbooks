@@ -10,6 +10,7 @@ class StoresController < ApplicationController
 				:thumbnail => i.xpath('thumbnail').inner_text
 			}
 			end
+	@near_store = Store.where(district_num: (Store.find(params[:id]).district_num)).limit(2)
   end
 
   def main
