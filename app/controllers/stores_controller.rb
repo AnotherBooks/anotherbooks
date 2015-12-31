@@ -20,4 +20,8 @@ class StoresController < ApplicationController
   def local
   	@stores = Store.where(district_num: params[:district_num])
   end
+
+  def search
+  	@results = Store.where("name like '%?%'", params[:query]).to_sql
+  end
 end
