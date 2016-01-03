@@ -4,7 +4,7 @@ class StoresController < ApplicationController
   	require 'nokogiri'
   	require 'open-uri'
 
-		url = URI.encode("https://apis.daum.net/search/image?apikey=c981ec9d04d0139cbb3fd3f9da722a8f&q=#{@store.name}&result=6&output=xml")
+		url = URI.encode("https://apis.daum.net/search/image?apikey=c981ec9d04d0139cbb3fd3f9da722a8f&q=#{@store.name}&result=8&output=xml")
 		xml = Nokogiri::XML(open(url))
 			@item = xml.xpath('//item').map do |i| {
 				:thumbnail => i.xpath('thumbnail').inner_text
