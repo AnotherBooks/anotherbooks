@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require flexslider
  *= require_tree .
  *= require_self
  */
@@ -97,8 +98,6 @@
 	width: 40px;
 	height: 40px;
 }
-
-
 
 .container > .fb-like {
 	margin-top: 5px;

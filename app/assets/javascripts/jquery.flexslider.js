@@ -5,7 +5,6 @@
  */
 ;
 (function ($) {
-
   var focused = true;
 
   //FlexSlider: Object Instance
