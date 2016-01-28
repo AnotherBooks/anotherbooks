@@ -1,4 +1,9 @@
 class StoresController < ApplicationController
+  def index
+    @stores = Store.where("name like ? or address like ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    @query = params[:query]
+  end
+
   def show
   	@store = Store.find(params[:id])
   	require 'nokogiri'

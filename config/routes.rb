@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  get 'stores' => 'stores#index'
   get 'stores/:id' => 'stores#show'
   root 'stores#main'
   get 'stores/local/:district_num' => 'stores#local'

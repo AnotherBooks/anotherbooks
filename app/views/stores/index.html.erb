@@ -4,10 +4,11 @@
       <a class="navbar-brand" href="/">
         <img class="nav_logo" alt="Brand" src="http://i.imgur.com/5ItloVX.png">
       </a>
-      </div>
+    </div>
   </div>
 </nav>
 
+<% if @stores.present? %>
 
 <div id="map" style="width:100%;height:250px;margin-top:-20px;"></div>
 <script>
@@ -63,31 +64,30 @@ infowindow.open(map, marker);
 <% end %>
 </script>
 
-
-
-<div class="container" style="margin-top: 50px;">
-	<div class="row">
-    <h4 style="margin-left: 20px;">이 지역의 동네서점 (총 <%= @stores.count %>개)</h4>
-    <% @stores.each do |store| %>
-		<div class="col-md-4 col-sm-6 col-xs-12 store">	
-			<div class="thumbnail">
-        <% if store.cover_image.present? %>
-				  <a href="/stores/<%= store.id %>"><img src="<%= store.cover_image %>"></a>
-        <% else %>
-          <a href="/stores/<%= store.id %>"><img src="http://i.imgur.com/CHH2N5t.jpg"></a>
-        <% end %>
-			</div>			
-		<h4><a href="/stores/<%= store.id %>"><%= store.name %></a></h4>
-  		<P><%= store.address %></P>
-  		<p><%= truncate(store.introduction, length: 70, omission: '...(more)') %></p>
-		</div>
-	<% end %>	
-	</div>
-</div>	
+<div class="row" style="margin-top:-10px;">
+  <div class="col-md-6 col-sm-8 col-xs-10" style="margin: 0 auto; float: none;">
+    <form action="/stores" method="get">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="서점명/주소를 입력하세요" name="query">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button">검색</button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
 
 <hr>
+
+<div class="container">
+	<div class="row">
+    <h4 style="margin-left: 20px;"> '<span style="color: blue;"><%= @query %></span>'에 대한 검색결과 (<%= @stores.count %>개)</h4>
+      <%= render 'stores' %>
+	</div>
+</div>
+<hr>
 <br/>
-<h3 style="text-align: center;"><img src="http://i.imgur.com/Tqumzcb.png"> 다른 지역의 동네서점 보기</h3>
+<h3 style="text-align: center;"><img src="http://i.imgur.com/Tqumzcb.png"> 지역별로 동네서점 찾기</h3>
   <div class="dropdown text-center">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
         지역선택
@@ -105,3 +105,50 @@ infowindow.open(map, marker);
           <li><a href="/stores/local/9">제주</a></li>
         </ul>
   </div>
+
+<% else %>
+<div class="row" style="margin-top:-10px;">
+  <div class="col-md-6 col-sm-8 col-xs-10" style="margin: 0 auto; float: none;">
+    <form action="/stores" method="get">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="서점명/주소를 입력하세요." name="query">
+        <span class="input-group-btn">
+        <button class="btn btn-default" type="button">검색</button>
+        </span>
+      </div><!-- /input-group -->
+    </form>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <h4 style="margin-left: 20px;"> '<span style="color: blue;"><%= @query %></span>'에 대한 검색결과</h4>
+    <br/>
+    <p class="search-not-found">검색결과가 없습니다.</p>
+  </div>
+</div>
+
+<hr>
+
+<br/>
+<h3 style="text-align: center;"><img src="http://i.imgur.com/Tqumzcb.png"> 지역별로 동네서점 찾기</h3>
+  <div class="dropdown text-center">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        지역선택
+        <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-center" aria-labelledby="dropdownMenu1">
+          <li><a href="/stores/local/1">서울(홍대/신촌)</a></li>
+          <li><a href="/stores/local/2">서울(한남/종로/중구)</a></li>
+          <li><a href="/stores/local/3">서울(기타)</a></li>
+          <li><a href="/stores/local/4">경기/인천</a></li>
+          <li><a href="/stores/local/5">충청/대전</a></li>
+          <li><a href="/stores/local/6">전라/광주</a></li>
+          <li><a href="/stores/local/7">경북/대구</a></li>
+          <li><a href="/stores/local/8">경남/부산</a></li>
+          <li><a href="/stores/local/9">제주</a></li>
+        </ul>
+  </div>
+<% end %>

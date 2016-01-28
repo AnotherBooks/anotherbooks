@@ -64,8 +64,12 @@
   text-align: center;
 }
 
-.container a {
+.dropdown-menu a {
 	text-decoration:none;
+}
+
+.container a {
+  text-decoration:none;
 }
 
 .jumbotron .container {
@@ -107,6 +111,11 @@
 	margin-top: 10px;
 }
 
+.search-not-found {
+  text-align: center;
+  font-size: 20px;
+}
+
 #footer-logo {
 	height: 60px;
 }
@@ -127,3 +136,5 @@
 .nearby-img {
 	padding: 10px 5px 10px 10px;
 }
+
+
