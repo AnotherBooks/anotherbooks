@@ -19,7 +19,7 @@ class StoresController < ApplicationController
   end
 
   def main
-  	@stores = Store.order(id: :desc).all
+  	@stores = Store.order(id: :desc).limit(15)
   end
 
   def local
