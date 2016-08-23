@@ -7,7 +7,7 @@
 	<% if @store.background_image.present? %>
 	<div class="background" style="background-image:url(<%= @store.background_image %>)">
     </div>
-    <% else %> 
+    <% else %>
     <div class="background" style="background-image:url(http://i.imgur.com/zJVpw2a.jpg)">
     </div>
     <% end %>
@@ -20,7 +20,7 @@
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div>
  	</div>
-</div> 
+</div>
 
 
 <div class="container">
@@ -38,10 +38,10 @@
 				<p><strong>- 이용시간</strong></p>
 				<p>  평일: <%= @store.open_day %></p>
 			<% end %>
-			<% if @store.open_holiday.present? %> 
+			<% if @store.open_holiday.present? %>
 				<p>  주말: <%= @store.open_holiday %></p>
 				<div class="alert alert-info" role="alert">
-					<p>동네서점 특성상 이용시간에 변동이 있을수 있으니 참고바랍니다.</p> 
+					<p>동네서점 특성상 이용시간에 변동이 있을수 있으니 참고바랍니다.</p>
 			    </div>
 			<% end %>
 			<% if @store.website_url.present? %>
@@ -61,7 +61,7 @@
 				<% if @store.blog_url.present? %>
 					<a href="<%= @store.blog_url %>" target="_blank"><img src="http://i.imgur.com/CB98VTh.png"></a>
 				<% end %>
-			</div>	
+			</div>
 		</div>
 	</div>
 </div>
@@ -76,14 +76,14 @@
 			<% end %>
 		</div>
 	</div>
-</div>	
+</div>
 
 
 <% if @store.search_img.present? %>
 <div class="container">
 	<div class="row">
 		<div class="col-md-6" style="margin: 0 auto; float: none;">
-			</br><p><strong>- 겔러리</strong><img src="http://i.imgur.com/yDsNC59.png" style="float:right;"/></p>
+		</br><p><strong>- 갤러리</strong><img src="http://i.imgur.com/yDsNC59.png" style="float:right;"/></p>
 			<div class="flexslider">
   				<ul class="slides">
 				<% @item.each do |photo| %>
@@ -108,16 +108,16 @@
 			<div id="map" style="width:100%;height:250px;">
 			</div>
 		<script>
-		 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-     			mapOption = { 
+		 	var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+     			mapOption = {
          		center: new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>), // 지도의 중심좌표
          		level: 4 // 지도의 확대 레벨
      			};
 
 		 	var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-		 	// 마커가 표시될 위치입니다 
-		 	var markerPosition  = new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>); 
+		 	// 마커가 표시될 위치입니다
+		 	var markerPosition  = new daum.maps.LatLng(<%= @store.latitude %>, <%= @store.longitude %>);
 
 		 	// 마커를 생성합니다
 		 	var marker = new daum.maps.Marker({
@@ -132,7 +132,7 @@
 		</script>
 		</div>
 	</div>
-</div>	
+</div>
 
 
 <br/>
@@ -144,7 +144,7 @@
 			<div class="media nearby-store">
   				<div class="media-left">
     				<a href="/stores/<%= near.id %>">
-    				<% if near.cover_image.present? %>	
+    				<% if near.cover_image.present? %>
       					<img class="media-object nearby-img" src="<%= near.cover_image %>" alt="<%= near.name %>" style="width:120px;">
       				<% else %>
       					<img class="media-object nearby-img" src="http://i.imgur.com/CHH2N5t.jpg" alt="<%= near.name %>" style="width:120px;">
@@ -158,7 +158,7 @@
 			</div>
 			<% end %>
 			<a href="/stores/local/<%= @store.district_num %>">
-			<p style="text-align: right; margin-top:10px; color:blue; font-weight: bold; text-decoration: underline;">더 보기</p></a>	
+			<p style="text-align: right; margin-top:10px; color:blue; font-weight: bold; text-decoration: underline;">더 보기</p></a>
 		</div>
 	</div>
 </div>
@@ -173,4 +173,4 @@
 			<div class="fb-comments" data-href="http://www.anotherbooks.kr/stores/<%= @store.id %>" data-width="100%" data-numposts="5"></div>
 		</div>
 	</div>
-</div>		
+</div>
