@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   def index
-    @stores = Store.where("name like ? or address like ? or introduction like ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    @stores = Store.where("name like ? or address like ? or introduction like ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%")
     @query = params[:query]
   end
 
